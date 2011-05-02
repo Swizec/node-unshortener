@@ -4,6 +4,7 @@
  */
 
 var express = require('express');
+var nowjs = require('now');
 
 var app = module.exports = express.createServer();
 
@@ -15,7 +16,7 @@ app.configure(function(){
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(express.cookieParser());
-  app.use(express.session({ secret: 'your secret here' }));
+  app.use(express.session({ secret: 'this is my dirty little secret, tell no-one' }));
   app.use(app.router);
   app.use(express.static(__dirname + '/public'));
 });
@@ -35,6 +36,10 @@ app.get('/', function(req, res){
     title: 'Express'
   });
 });
+
+var everyone = nowjs.initialize(app);
+
+everyone.now.message = "Hello world!";
 
 // Only listen on $ node app.js
 
