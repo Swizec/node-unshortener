@@ -8,6 +8,7 @@ var nowjs = require('now');
 var OAuth = require('oauth').OAuth;
 var querystring = require('querystring');
 var settings = require('./settings.js');
+var twitter = require('twitter');
 
 var app = module.exports = express.createServer();
 
@@ -40,13 +41,28 @@ function require_twitter_login(req, res, next) {
     next();
 };
 
+var everyone = nowjs.initialize(app);
+
 // Routes
 
 app.get('/', require_twitter_login, function(req, res){
-    console.log(req.session);
     res.render('index', {
         title: 'Express'
     });
+
+    var twit = new twitter({
+        consumer_key: settings.twitter.key,
+        consumer_secret: settings.twitter.secret,
+        access_token_key: req.session.oauth_access_token,
+        access_token_secret: req.session.oauth_access_token_secret
+    });
+
+    twit.get('/statuses/home_timeline.json',
+             {include_entities: 1,
+              count: 50},
+             function (data) {
+                 everyone.now.show_tweets(data);
+             });
 });
 
 app.get("/twitter_login", function (req, res) {
@@ -98,10 +114,6 @@ app.get('/twitter_login/callback', function (req, res) {
             }
         });
 });
-
-var everyone = nowjs.initialize(app);
-
-everyone.now.message = "Hello world!";
 
 // Only listen on $ node app.js
 
