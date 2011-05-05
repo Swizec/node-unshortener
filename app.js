@@ -7,6 +7,7 @@ var express = require('express');
 var nowjs = require('now');
 var OAuth = require('oauth').OAuth;
 var querystring = require('querystring');
+var settings = require('./settings.js');
 
 var app = module.exports = express.createServer();
 
@@ -42,6 +43,7 @@ function require_twitter_login(req, res, next) {
 // Routes
 
 app.get('/', require_twitter_login, function(req, res){
+    console.log(req.session);
     res.render('index', {
         title: 'Express'
     });
@@ -50,8 +52,8 @@ app.get('/', require_twitter_login, function(req, res){
 app.get("/twitter_login", function (req, res) {
     var oa = new OAuth("https://api.twitter.com/oauth/request_token",
                        "https://api.twitter.com/oauth/access_token",
-                       "cPGl2vWUYViS8EhuSx8BhA",
-                       "1sT7eqZpMIT6NFysEs9be0sF4wvVJUp7o2aWLxdcfg",
+                       settings.twitter.key,
+                       settings.twitter.secret,
                        "1.0",
                        "http://justhepics.com/twitter_login/callback",
                        "HMAC-SHA1");
