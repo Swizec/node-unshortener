@@ -43,6 +43,7 @@ function require_twitter_login(req, res, next) {
 };
 
 var everyone = nowjs.initialize(app);
+var users = [];
 
 // Routes
 
@@ -110,13 +111,15 @@ app.get('/data/tweets', function (req, res) {
         access_token_secret: req.session.oauth_access_token_secret
     });
 
+    var userId = req.param('user');
+
     twit.get('/statuses/home_timeline.json',
              {include_entities: 1,
               count: 50},
              function (data) {
                  async.forEach(data,
                                function (tweet, callback) {
-                                   everyone.now.show_tweets([tweet]);
+                                   users[userId].now.show_tweets([tweet]);
                                    callback(null);
                                },
                                function () {
@@ -124,6 +127,14 @@ app.get('/data/tweets', function (req, res) {
                                });
              });
 });
+
+everyone.now.initiate = function (callback) {
+    var group = nowjs.getGroup("user-"+this.user.clientId);
+    group.addUser(this.user.clientId);
+
+    users[this.user.clientId] = group;
+    callback(this.user.clientId);
+};
 
 // Only listen on $ node app.js
 

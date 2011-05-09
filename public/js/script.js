@@ -63,6 +63,8 @@ $(function(){
     };
 
     now.ready(function(){
-        $.getJSON('/data/tweets', function () {});
+        now.initiate(function (clientId) {
+            $.getJSON('/data/tweets', {user: clientId}, function () {});
+        });
     });
 });
