@@ -10,6 +10,7 @@ var querystring = require('querystring');
 var settings = require('./settings.js');
 var twitter = require('twitter');
 var async = require('async');
+var basil = require('./lib/basil.js');
 
 var app = module.exports = express.createServer();
 
@@ -115,11 +116,17 @@ app.get('/data/tweets', function (req, res) {
 
     twit.get('/statuses/home_timeline.json',
              {include_entities: 1,
-              count: 50},
+              count: 200},
              function (data) {
+                 require('fs').writeFile("./test/tweets.json",
+                                         JSON.stringify(data));
+
                  async.forEach(data,
                                function (tweet, callback) {
-                                   users[userId].now.show_tweets([tweet]);
+                                   basil.is_pic(tweet, function (yes) {
+                                       if (yes) {
+                                           users[userId].now.show_tweets([tweet]);
+                                       }});
                                    callback(null);
                                },
                                function () {
@@ -135,6 +142,8 @@ everyone.now.initiate = function (callback) {
     users[this.user.clientId] = group;
     callback(this.user.clientId);
 };
+
+// TODO: when users vanish do some cleaning up so as to not hold their group indefinitely
 
 // Only listen on $ node app.js
 
