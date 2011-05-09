@@ -9,6 +9,7 @@ var OAuth = require('oauth').OAuth;
 var querystring = require('querystring');
 var settings = require('./settings.js');
 var twitter = require('twitter');
+var async = require('async');
 
 var app = module.exports = express.createServer();
 
@@ -26,11 +27,11 @@ app.configure(function(){
 });
 
 app.configure('development', function(){
-    app.use(express.errorHandler({ dumpExceptions: true, showStack: true })); 
+    app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 });
 
 app.configure('production', function(){
-    app.use(express.errorHandler()); 
+    app.use(express.errorHandler());
 });
 
 function require_twitter_login(req, res, next) {
@@ -49,20 +50,6 @@ app.get('/', require_twitter_login, function(req, res){
     res.render('index', {
         title: 'Express'
     });
-
-    var twit = new twitter({
-        consumer_key: settings.twitter.key,
-        consumer_secret: settings.twitter.secret,
-        access_token_key: req.session.oauth_access_token,
-        access_token_secret: req.session.oauth_access_token_secret
-    });
-
-    twit.get('/statuses/home_timeline.json',
-             {include_entities: 1,
-              count: 50},
-             function (data) {
-                 everyone.now.show_tweets(data);
-             });
 });
 
 app.get("/twitter_login", function (req, res) {
@@ -113,6 +100,29 @@ app.get('/twitter_login/callback', function (req, res) {
                 }
             }
         });
+});
+
+app.get('/data/tweets', function (req, res) {
+    var twit = new twitter({
+        consumer_key: settings.twitter.key,
+        consumer_secret: settings.twitter.secret,
+        access_token_key: req.session.oauth_access_token,
+        access_token_secret: req.session.oauth_access_token_secret
+    });
+
+    twit.get('/statuses/home_timeline.json',
+             {include_entities: 1,
+              count: 50},
+             function (data) {
+                 async.forEach(data,
+                               function (tweet, callback) {
+                                   everyone.now.show_tweets([tweet]);
+                                   callback(null);
+                               },
+                               function () {
+                                   res.end();
+                               });
+             });
 });
 
 // Only listen on $ node app.js

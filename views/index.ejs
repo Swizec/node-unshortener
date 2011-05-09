@@ -2,7 +2,9 @@
 <p>Welcome to <%= title %></p>
 
 <ul id="tweets">
-    <li id="tweet-template">
-        <span class="tweet-content"></span>
-    </li>
+
 </ul>
+
+<div id="templates" style="display: none">
+     <li id="tweet-template">${user.screen_name} :: ${text}</li>
+</div>
