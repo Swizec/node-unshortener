@@ -1,6 +1,23 @@
 $(function(){
 
-    window.Tweet = Backbone.Model.extend({});
+    window.Tweet = Backbone.Model.extend({
+        initialize: function () {
+            _.bindAll(this, "parse_text");
+            this.parse_text();
+        },
+
+        parse_text: function () {
+            _.map(_.filter(this.attributes.text.split(' '),
+                                 function (word) {
+                                     return word.substr(0, 7) == 'http://';
+                                 }),
+                  function (url) {
+                      this.attributes.image_link = url;
+                      this.attributes.text = this.attributes.text.replace(url, '');
+                  },
+                  this);
+        }
+    });
 
     window.TweetList = Backbone.Collection.extend({
         model: Tweet,
@@ -18,19 +35,13 @@ $(function(){
         events: {},
 
         initialize: function () {
-            _.bindAll(this, "render", "setContent");
+            _.bindAll(this, "render");
             this.model.bind('change', this.render);
             this.model.view = this;
         },
 
         render: function () {
             $(this.el).html(this.template.tmpl(this.model.toJSON()));
-            return this;
-        },
-
-        setContent: function () {
-            var content = this.model.attributes.text;
-            this.$('.tweet-content').text(content);
             return this;
         }
     });

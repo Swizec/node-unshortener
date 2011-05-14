@@ -116,7 +116,7 @@ app.get('/data/tweets', function (req, res) {
 
     twit.get('/statuses/home_timeline.json',
              {include_entities: 1,
-              count: 200},
+              count: 500},
              function (data) {
                  require('fs').writeFile("./test/tweets.json",
                                          JSON.stringify(data));
