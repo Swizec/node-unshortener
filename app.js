@@ -123,8 +123,9 @@ app.get('/data/tweets', function (req, res) {
 
                  async.forEach(data,
                                function (tweet, callback) {
-                                   basil.is_pic(tweet, function (yes) {
-                                       if (yes) {
+                                   basil.get_pic_link(tweet, function (url) {
+                                       if (url) {
+                                           tweet.image_link = url;
                                            users[userId].now.show_tweets([tweet]);
                                        }});
                                    callback(null);

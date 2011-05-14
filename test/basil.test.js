@@ -5,12 +5,14 @@ var basil = require('../lib/basil')
 var tweets = JSON.parse(require('fs').readFileSync('./test/tweets.json'));
 
 module.exports = {
-    'is_pic': function () {
-        for (var i=0; i<tweets.length; i++) {
-            basil.is_pic(tweets[i]);
-        }
+    'get_pic_link': function () {
+        var services = /instagr.am|yfrog.com|twitpic.com|picplz.com/;
 
-        assert.ok(true);
+        for (var i=0; i<tweets.length; i++) {
+            basil.get_pic_link(tweets[i], function (url) {
+                assert.ok(url == null || url.match(services));
+            });
+        }
     }
 };
 

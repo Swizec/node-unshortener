@@ -3,19 +3,6 @@ $(function(){
     window.Tweet = Backbone.Model.extend({
         initialize: function () {
             _.bindAll(this, "parse_text");
-            this.parse_text();
-        },
-
-        parse_text: function () {
-            _.map(_.filter(this.attributes.text.split(' '),
-                                 function (word) {
-                                     return word.substr(0, 7) == 'http://';
-                                 }),
-                  function (url) {
-                      this.attributes.image_link = url;
-                      this.attributes.text = this.attributes.text.replace(url, '');
-                  },
-                  this);
         }
     });
 
