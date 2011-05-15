@@ -2,11 +2,15 @@ $(function(){
 
     window.Tweet = Backbone.Model.extend({
         initialize: function () {
-            //_.bindAll(this, "parse_text");
+            _.bindAll(this, "get_image");
+            this.get_image();
+        },
+
+        get_image: function () {
             var self = this;
-            setTimeout(function () {
-                self.set({text: 'HAI'});
-            }, 1000);
+            now.extract_pic(this.attributes.image_link, function (url) {
+                self.set({image_url: url});
+            });
         }
     });
 
@@ -32,6 +36,7 @@ $(function(){
         },
 
         render: function () {
+            console.log("rendering!");
             $(this.el).html(this.template.tmpl(this.model.toJSON()));
             return this;
         }
@@ -58,7 +63,7 @@ $(function(){
     window.App = new AppView;
 
     now.show_tweets = function (tweets) {
-        Tweets.add(_.map(tweets, function (tweet) {
+        Tweets.add(_.map(tweets, function (tweet) {;
             return new Tweet(tweet);
         }));
 
