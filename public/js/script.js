@@ -2,7 +2,11 @@ $(function(){
 
     window.Tweet = Backbone.Model.extend({
         initialize: function () {
-            _.bindAll(this, "parse_text");
+            //_.bindAll(this, "parse_text");
+            var self = this;
+            setTimeout(function () {
+                self.set({text: 'HAI'});
+            }, 1000);
         }
     });
 
