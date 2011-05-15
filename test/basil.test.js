@@ -30,6 +30,13 @@ module.exports = {
         basil.extract_pic(link, function (url) {
             assert.strictEqual(url, 'http://images.instagram.com/media/2011/05/14/e2edcce4a2724769920b4bd7cf7a4a38_7.jpg');
         });
+    },
+
+    'extract_random': function () {
+        basil.extract_pic('http://swizec.com/blog/using-prime-numbers-to-generate-pretty-trees/swizec/1705',
+                          function (url) {
+                              console.log(url);
+                          });
     }
 };
 
