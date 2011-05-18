@@ -64,5 +64,20 @@ unshort.bitly(urllib.parse('http://bit.ly/lyQusq'),
 	beforeExit(function () {
 	    assert.equal(fired, true);
 	});
+    },
+
+    'expand_is.gd': function (beforeExit) {
+        var fired = false;
+
+	unshort.isgd(urllib.parse('http://is.gd/JkYqPa'),
+		     function (url) {
+			 assert.equal(url.href,
+				      'http://holykaw.alltop.com/the-inception-chair?tu3=1');
+			 fired = true;
+		     });
+
+	beforeExit(function () {
+	    assert.equal(fired, true);
+	});
     }
 };
