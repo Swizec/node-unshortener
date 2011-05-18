@@ -1,3 +1,3 @@
 
 exports.bitly = {'username': '<YOUR USERNAME>',
-		 'apikey': '<YOUR API KEY>'}
+		 'apikey': '<YOUR API KEY>'};
