@@ -1,6 +1,6 @@
 {
   "name": "unshortener",
-  "description": "A simple url unshortener for getting long links.",
+  "description": "A simple url unshortener for expanding short links.",
   "version": "0.0.1",
   "homepage": "https://github.com/Swizec/node-unshortener",
   "repository": {
@@ -20,5 +20,8 @@
   ],
   "scripts": {
     "test": "expresso"
+  },
+  "dependencies": {
+    "bitly": "1.0.1"
   }
 }
