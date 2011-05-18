@@ -1,0 +1,24 @@
+{
+  "name": "unshortener",
+  "description": "A simple url unshortener for getting long links.",
+  "version": "0.0.1",
+  "homepage": "https://github.com/Swizec/node-unshortener",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Swizec/node-unshortener.git"
+  },
+  "author": "Swizec <swizec@swizec.com> (http://swizec.com)",
+  "main": "./index.js",
+  "directories": {
+    "lib": "."
+  },
+  "engines": {
+    "node": "0.5.x"
+  },
+  "files": [
+    ""
+  ],
+  "scripts": {
+    "test": "expresso"
+  }
+}
