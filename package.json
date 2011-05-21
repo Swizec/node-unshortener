@@ -1,7 +1,7 @@
 {
   "name": "unshortener",
   "description": "A simple url unshortener for expanding short links.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "homepage": "https://github.com/Swizec/node-unshortener",
   "repository": {
     "type": "git",
