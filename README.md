@@ -44,6 +44,7 @@ That said, please feel free to suggest any unshortening services I may
 have missed.
 
 Services directly supported so far:
-   - bit.ly
-   - j.mp
-   - is.gd
+
+  - bit.ly
+  - j.mp
+  - is.gd
