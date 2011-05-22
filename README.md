@@ -13,13 +13,6 @@ or
      cd node-unshortener
      npm link
 
-Then make sure settings are set up
-
-     cd node-unshortener
-     cp settings.js local_settings.js
-
-You should now edit local_settings.js to enter your bitly credentials.
-
 ## Usage
 
      // expand an URL
@@ -32,6 +25,24 @@ You should now edit local_settings.js to enter your bitly credentials.
                              console.log(url);
                         });
 
+If you have a handy bitly account you should also pass in an options
+object to enable the unshortener to use the bitly API directly:
+
+     // expand an URL
+     var unshortener = require('unshortener');
+
+     // you can pass in a url object or string
+     unshortener.expand('http://t.co/rWP6BP3',
+                        {bitly: {username: '<YOUR BITLY USERNAME>',
+                                 apikey: '<YOUR BITLY API KEY>'}},
+                        function (url) {
+                             // url is a url object
+                             console.log(url);
+                        });
+
+One final warning about bitly; as of this writing node-bitly as it
+sits in the npm repository is broken and you should install from git
+directly despite the fact both versions are 1.0.1.
 
 ## How it works
 
@@ -48,3 +59,5 @@ Services directly supported so far:
   - bit.ly
   - j.mp
   - is.gd
+
+
