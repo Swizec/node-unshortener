@@ -79,5 +79,20 @@ unshort.bitly(urllib.parse('http://bit.ly/lyQusq'),
 	beforeExit(function () {
 	    assert.equal(fired, true);
 	});
+    },
+
+    'expand_goo.gl': function (beforeExit) {
+        var fired = false;
+
+	unshort.googl(urllib.parse('http://goo.gl/fbsS'),
+		      function (url) {
+			  assert.equal(url.href,
+				       'http://www.google.com/');
+			  fired = true;
+		      });
+
+	beforeExit(function () {
+	    assert.equal(fired, true);
+	});
     }
 };
