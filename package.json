@@ -23,5 +23,6 @@
   },
   "dependencies": {
     "bitly": "1.0.1"
-  }
+  },
+  "bundleDependencies": ["bitly"]
 }

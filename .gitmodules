@@ -1,0 +1,3 @@
+[submodule "node-bitly"]
+	path = node-bitly
+	url = https://github.com/tanepiper/node-bitly.git
