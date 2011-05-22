@@ -39,7 +39,7 @@ module.exports = {
     'expand_bit.ly': function (beforeExit) {
 	var fired = false;
 
-unshort.bitly(urllib.parse('http://bit.ly/lyQusq'),
+        unshort.bitly(urllib.parse('http://bit.ly/lyQusq'),
 		      function (url) {
 			  assert.equal(url.href,
 				       'http://www.crunchgear.com/2011/05/18/review-two-speck-ipad-2-cases/?utm_source=twitterfeed&utm_medium=twitter');
