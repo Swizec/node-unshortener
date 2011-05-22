@@ -40,6 +40,9 @@ module.exports = {
 	var fired = false;
 
         unshort.bitly(urllib.parse('http://bit.ly/lyQusq'),
+                      // these exist for the sole purpose of testing node-unshortener
+                      {bitly: {'username': 'nodeunshortener',
+                               'apikey': 'R_aafa12fe5f14836d39b016b04e0e3cd1'}},
 		      function (url) {
 			  assert.equal(url.href,
 				       'http://www.crunchgear.com/2011/05/18/review-two-speck-ipad-2-cases/?utm_source=twitterfeed&utm_medium=twitter');
@@ -55,6 +58,8 @@ module.exports = {
         var fired = false;
 
 	unshort.bitly(urllib.parse('http://j.mp/m77DEe'),
+                      {bitly: {'username': 'nodeunshortener',
+                               'apikey': 'R_aafa12fe5f14836d39b016b04e0e3cd1'}},
 		      function (url) {
 			  assert.equal(url.href,
 				       'https://dev.twitter.com/pages/application-permission-model');
