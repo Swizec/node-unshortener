@@ -1,5 +1,5 @@
 
-# node-unshortener 0.0.4
+# node-unshortener 0.0.5
 
 A simple library that can unshorten any short url.
 
@@ -40,9 +40,6 @@ object to enable the unshortener to use the bitly API directly:
                              console.log(url);
                         });
 
-One final warning about bitly; as of this writing node-bitly as it
-sits in the npm repository is broken and you should install from git
-directly despite the fact both versions are 1.0.1.
 
 ## How it works
 
