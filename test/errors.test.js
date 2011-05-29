@@ -11,7 +11,23 @@ module.exports = {
 
         unshortener.expand(fixture,
                            function (url, error) {
-                               assert.equal(url, fixture);
+                               assert.equal(url.href, fixture);
+                               assert.ok(error);
+	                       fired = true;
+        });
+
+	beforeExit(function () {
+	    assert.ok(fired);
+	});
+    },
+
+    'test_bad_link': function (beforeExit) {
+        var fired = false;
+        var fixture = 'http://linkd.in/k2XhE3sfaawfaw3f';
+
+        unshortener.expand(fixture,
+                           function (url, error) {
+                               assert.equal(url.href, fixture);
                                assert.ok(error);
 	                       fired = true;
         });
