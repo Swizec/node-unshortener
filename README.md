@@ -1,5 +1,5 @@
 
-# node-unshortener 0.0.5
+# node-unshortener 0.0.6
 
 A simple library that can unshorten any short url.
 
@@ -40,6 +40,8 @@ object to enable the unshortener to use the bitly API directly:
                              console.log(url);
                         });
 
+When an error occurs the callback is passed the original url and an
+error flag.
 
 ## How it works
 
@@ -51,12 +53,16 @@ the url shortener's official API.
 That said, please feel free to suggest any unshortening services I may
 have missed.
 
-Services directly supported so far:
+Services/domains directly supported so far:
 
   - bit.ly
   - j.mp
   - is.gd
   - goo.gl
+  - ericri.es
+  - jc.is
+  - nyti.ms
+  - linkd.in
 
 ## License
 
