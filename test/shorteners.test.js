@@ -29,7 +29,7 @@ module.exports = {
         var urls = {'http://jc.is/mvVPJ2': 'http://news.ycombinator.com/item?id=2595226',
                     'http://ericri.es/kcfliN': 'http://su.pr/2uatZH',
                     'http://nyti.ms/k2SK7V': 'http://www.nytimes.com/2011/05/29/realestate/scenes-from-a-wild-youth-streetscapescentral-park.html?smid=tw-nytimes&seid=auto',
-                    'http://tnw.to/18bfH': 'http://thenextweb.com/microsoft/2011/05/27/this-week-at-microsoft-skype-mango-and-zune/?awesm=tnw.to_18bfH&utm_content=spreadus_master&utm_medium=tnw.to-other&utm_source=twitter.com'};
+                    'http://linkd.in/k2XhE3': 'http://www.linkedin.com/pub/kristofer-marcus-pmp-csm/3/b4/32a'};
 
         var a_case = function (fixture) {
             var fired = false;
