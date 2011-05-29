@@ -24,10 +24,10 @@ module.exports = {
     'expand_object': function (beforeExit) {
         var fired = false;
 
-        unshortener.expand(urllib.parse('http://t.co/rWP6BP3'),
+        unshortener.expand(urllib.parse('http://fb.me/w9ajW3sD'),
                            function (url) {
                                assert.equal(url.href,
-					    'http://www.facebook.com/mybrucebruce');
+					    'http://www.njuz.net/stavljanje-smajlija-ponistava-sve-napisane-uvrede/');
 			       fired = true;
                            });
 
@@ -41,8 +41,8 @@ module.exports = {
 
         unshortener.expand('http://bit.ly/lyQusq',
                            // these exist for the sole purpose of testing node-unshortener
-                          {'username': 'nodeunshortener',
-                           'apikey': 'R_aafa12fe5f14836d39b016b04e0e3cd1'},
+                          {bitly:{'username': 'nodeunshortener',
+                                  'apikey': 'R_aafa12fe5f14836d39b016b04e0e3cd1'}},
 		           function (url) {
 			       assert.equal(url.href,
 				            'http://www.crunchgear.com/2011/05/18/review-two-speck-ipad-2-cases/?utm_source=twitterfeed&utm_medium=twitter');
@@ -58,7 +58,6 @@ module.exports = {
         var fired = false;
 
         unshortener.expand('http://bit.ly/lyQusq',
-                           // these exist for the sole purpose of testing node-unshortener
 		           function (url) {
 			       assert.equal(url.href,
 				            'http://www.crunchgear.com/2011/05/18/review-two-speck-ipad-2-cases/?utm_source=twitterfeed&utm_medium=twitter');
