@@ -26,21 +26,30 @@ module.exports = {
     },
 
     'custom_bitly': function (beforeExit) {
-        var fired = false;
+        var urls = {'http://jc.is/mvVPJ2': 'http://news.ycombinator.com/item?id=2595226',
+                    'http://ericri.es/kcfliN': 'http://su.pr/2uatZH'};
 
-        unshort.bitly(urllib.parse('http://ericri.es/kcfliN'),
-                      // these exist for the sole purpose of testing node-unshortener
-                      {'username': 'nodeunshortener',
-                       'apikey': 'R_aafa12fe5f14836d39b016b04e0e3cd1'},
-		      function (url) {
-			  assert.equal(url.href,
-				       'http://su.pr/2uatZH');
-			  fired = true;
-		      });
+        var a_case = function (fixture) {
+            var fired = false;
 
-	beforeExit(function () {
-	    assert.equal(fired, true);
-	});
+            unshort.bitly(urllib.parse(fixture),
+                          // these exist for the sole purpose of testing node-unshortener
+                          {'username': 'nodeunshortener',
+                           'apikey': 'R_aafa12fe5f14836d39b016b04e0e3cd1'},
+		          function (url) {
+			      assert.equal(url.href, urls[fixture]);
+			      fired = true;
+		          });
+
+	    beforeExit(function () {
+	        assert.equal(fired, true);
+	    });
+        };
+
+
+        for (var fixture in urls) {
+            a_case(fixture);
+        };
     },
 
     'expand_j.mp': function (beforeExit) {
