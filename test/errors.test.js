@@ -3,6 +3,7 @@ var unshortener = require('../lib/unshortener')
 
 var urllib = require('url');
 
+var unshort = unshortener.Unshorteners;
 
 module.exports = {
     'test_unresolvable': function (beforeExit) {
@@ -34,6 +35,24 @@ module.exports = {
 
 	beforeExit(function () {
 	    assert.ok(fired);
+	});
+    },
+
+    'bad_bit.ly': function (beforeExit) {
+	var fired = false;
+
+        unshort.bitly(urllib.parse('http://bit.ly/k2XhE3sfaawfaw3f'),
+                      // these exist for the sole purpose of testing node-unshortener
+                      {'username': 'nodeunshortener',
+                       'apikey': 'R_aafa12fe5f14836d39b016b04e0e3cd1'},
+		      function (url) {
+			  assert.equal(url.href,
+				       'http://bit.ly/k2XhE3sfaawfaw3f');
+			  fired = true;
+		      });
+
+	beforeExit(function () {
+	    assert.equal(fired, true);
 	});
     }
 };
