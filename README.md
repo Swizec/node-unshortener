@@ -15,6 +15,7 @@ or
 
 ## Usage
 
+``` javascript
      // expand an URL
      var unshortener = require('unshortener');
 
@@ -24,10 +25,12 @@ or
                              // url is a url object
                              console.log(url);
                         });
+```
 
 If you have a handy bitly account you should also pass in an options
 object to enable the unshortener to use the bitly API directly:
 
+``` javascript
      // expand an URL
      var unshortener = require('unshortener');
 
@@ -39,6 +42,7 @@ object to enable the unshortener to use the bitly API directly:
                              // url is a url object
                              console.log(url);
                         });
+```
 
 When an error occurs the callback is passed the original url and an
 error flag.
