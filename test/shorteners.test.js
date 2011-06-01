@@ -29,7 +29,8 @@ module.exports = {
         var urls = {'http://jc.is/mvVPJ2': 'http://news.ycombinator.com/item?id=2595226',
                     'http://ericri.es/kcfliN': 'http://su.pr/2uatZH',
                     'http://nyti.ms/k2SK7V': 'http://www.nytimes.com/2011/05/29/realestate/scenes-from-a-wild-youth-streetscapescentral-park.html?smid=tw-nytimes&seid=auto',
-                    'http://linkd.in/k2XhE3': 'http://www.linkedin.com/pub/kristofer-marcus-pmp-csm/3/b4/32a'};
+                    'http://linkd.in/k2XhE3': 'http://www.linkedin.com/pub/kristofer-marcus-pmp-csm/3/b4/32a',
+                   'http://win.gs/mgJknF': 'http://www.youtube.com/watch?v=CHLtVhTaZjA'};
 
         var a_case = function (fixture) {
             var fired = false;
