@@ -15,6 +15,7 @@ or
 
 ## Usage
 
+``` javascript
      // expand an URL
      var unshortener = require('unshortener');
 
@@ -24,10 +25,12 @@ or
                              // url is a url object
                              console.log(url);
                         });
+```
 
 If you have a handy bitly account you should also pass in an options
 object to enable the unshortener to use the bitly API directly:
 
+``` javascript
      // expand an URL
      var unshortener = require('unshortener');
 
@@ -39,6 +42,7 @@ object to enable the unshortener to use the bitly API directly:
                              // url is a url object
                              console.log(url);
                         });
+```
 
 When an error occurs the callback is passed the original url and an
 error flag.
@@ -66,14 +70,11 @@ Services/domains directly supported so far:
 
 ## License
 
-(The MIT License)
+Copyright (C) Swizec Teller <swizec@swizec.com>
 
-Copyright (c) 2011 Swizec Teller <swizec@swizec.com>
+Licensed under the [GPL version 3](http://www.gnu.org/licenses) or
+later for non-commercial use.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-
+For commercial use please consider [purchasing a commercial
+license](http://www.binpress.com/app/nodeunshortener/414?ad=1031) to
+support my work.
