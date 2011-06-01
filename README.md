@@ -67,6 +67,7 @@ Services/domains directly supported so far:
   - jc.is
   - nyti.ms
   - linkd.in
+  - win.gs
 
 ## License
 
