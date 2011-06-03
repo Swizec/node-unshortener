@@ -68,6 +68,9 @@ Services/domains directly supported so far:
   - nyti.ms
   - linkd.in
   - win.gs
+  - dai.ly
+  - imgry.net
+  - mln.im
 
 ## License
 
