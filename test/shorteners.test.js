@@ -31,7 +31,8 @@ module.exports = {
                     'http://nyti.ms/k2SK7V': 'http://www.nytimes.com/2011/05/29/realestate/scenes-from-a-wild-youth-streetscapescentral-park.html?smid=tw-nytimes&seid=auto',
                     'http://linkd.in/k2XhE3': 'http://www.linkedin.com/pub/kristofer-marcus-pmp-csm/3/b4/32a',
                     'http://win.gs/mgJknF': 'http://www.youtube.com/watch?v=CHLtVhTaZjA',
-		    'http://dai.ly/9QkUnD': 'http://www.dailymotion.com/video/x92auu_knackebrodsdansen-talang-2009-incro_fun'};
+		    'http://dai.ly/9QkUnD': 'http://www.dailymotion.com/video/x92auu_knackebrodsdansen-talang-2009-incro_fun',
+		    'http://imgry.net/jqZsHU': 'http://davewilsonphotography.com/2011/06/03/hoodoos-of-bryce-canyon/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed:+DaveWilsonPhotography+(Dave+Wilson+Photography)'};
 
         var a_case = function (fixture) {
             var fired = false;
