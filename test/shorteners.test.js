@@ -30,7 +30,8 @@ module.exports = {
                     'http://ericri.es/kcfliN': 'http://su.pr/2uatZH',
                     'http://nyti.ms/k2SK7V': 'http://www.nytimes.com/2011/05/29/realestate/scenes-from-a-wild-youth-streetscapescentral-park.html?smid=tw-nytimes&seid=auto',
                     'http://linkd.in/k2XhE3': 'http://www.linkedin.com/pub/kristofer-marcus-pmp-csm/3/b4/32a',
-                   'http://win.gs/mgJknF': 'http://www.youtube.com/watch?v=CHLtVhTaZjA'};
+                    'http://win.gs/mgJknF': 'http://www.youtube.com/watch?v=CHLtVhTaZjA',
+		    'http://dai.ly/9QkUnD': 'http://www.dailymotion.com/video/x92auu_knackebrodsdansen-talang-2009-incro_fun'};
 
         var a_case = function (fixture) {
             var fired = false;
