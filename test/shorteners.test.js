@@ -33,7 +33,8 @@ module.exports = {
                     'http://win.gs/mgJknF': 'http://www.youtube.com/watch?v=CHLtVhTaZjA',
 		    'http://dai.ly/9QkUnD': 'http://www.dailymotion.com/video/x92auu_knackebrodsdansen-talang-2009-incro_fun',
 		    'http://imgry.net/jqZsHU': 'http://davewilsonphotography.com/2011/06/03/hoodoos-of-bryce-canyon/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed:+DaveWilsonPhotography+(Dave+Wilson+Photography)',
-		    'http://mln.im/lglfGU': 'http://www.hongkiat.com/blog/useful-web-usability-testing-tools/'};
+		    'http://mln.im/lglfGU': 'http://www.hongkiat.com/blog/useful-web-usability-testing-tools/',
+		    'http://theatln.tc/izjqpV': 'http://www.theatlanticwire.com/national/2011/06/jack-kevorkian/38453/'};
 
         var a_case = function (fixture) {
             var fired = false;

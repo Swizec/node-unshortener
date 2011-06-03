@@ -71,6 +71,7 @@ Services/domains directly supported so far:
   - dai.ly
   - imgry.net
   - mln.im
+  - theatln.tc
 
 ## License
 
