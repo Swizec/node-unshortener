@@ -72,6 +72,7 @@ Services/domains directly supported so far:
   - imgry.net
   - mln.im
   - theatln.tc
+  - rww.to
 
 ## License
 

@@ -34,7 +34,8 @@ module.exports = {
 		    'http://dai.ly/9QkUnD': 'http://www.dailymotion.com/video/x92auu_knackebrodsdansen-talang-2009-incro_fun',
 		    'http://imgry.net/jqZsHU': 'http://davewilsonphotography.com/2011/06/03/hoodoos-of-bryce-canyon/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed:+DaveWilsonPhotography+(Dave+Wilson+Photography)',
 		    'http://mln.im/lglfGU': 'http://www.hongkiat.com/blog/useful-web-usability-testing-tools/',
-		    'http://theatln.tc/izjqpV': 'http://www.theatlanticwire.com/national/2011/06/jack-kevorkian/38453/'};
+		    'http://theatln.tc/izjqpV': 'http://www.theatlanticwire.com/national/2011/06/jack-kevorkian/38453/',
+		    'http://rww.to/jZpbWa': 'http://www.readwriteweb.com/archives/belgian_museum_offers_real_guides_online.php?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed:+readwriteweb+(ReadWriteWeb)'};
 
         var a_case = function (fixture) {
             var fired = false;
