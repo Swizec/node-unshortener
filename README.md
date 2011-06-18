@@ -1,5 +1,5 @@
 
-# node-unshortener 0.0.6
+# node-unshortener 0.0.7
 
 A simple library that can unshorten any short url.
 
