@@ -70,6 +70,7 @@ Services/domains directly supported so far:
   - win.gs
   - budurl.com
   - cli.gs
+  - snipurl.com
 
 ## License
 

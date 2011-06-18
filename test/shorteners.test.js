@@ -130,5 +130,20 @@ module.exports = {
         beforeExit(function () {
             assert.equal(fired, true);
         });
+    },
+
+    'expand_snipurl.com': function (beforeExit) {
+        var fired = false;
+
+        unshort.snipurl(urllib.parse('http://snipurl.com/27x8i0'),
+                       function (url) {
+                           fired = true;
+                           assert.equal(url.href,
+                                        'http://www.wishbookweb.com/1940_Sears_ChristmasBook/images/1940SearsChristmasBookPage0037.jpg');
+                       });
+
+        beforeExit(function () {
+            assert.equal(fired, true);
+        });
     }
 }
