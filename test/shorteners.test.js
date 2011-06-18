@@ -115,5 +115,20 @@ module.exports = {
         beforeExit(function () {
             assert.equal(fired, true);
         });
+    },
+
+    'expand_cli.gs': function (beforeExit) {
+        var fired = false;
+
+        unshort.cligs(urllib.parse('http://cli.gs/gIBpf'),
+                       function (url) {
+                           fired = true;
+                           assert.equal(url.href,
+                                        'http://twitter.com/ryanlavia/statuses/82073752527044608');
+                       });
+
+        beforeExit(function () {
+            assert.equal(fired, true);
+        });
     }
 }

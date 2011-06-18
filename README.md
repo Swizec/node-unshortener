@@ -69,6 +69,7 @@ Services/domains directly supported so far:
   - linkd.in
   - win.gs
   - budurl.com
+  - cli.gs
 
 ## License
 
