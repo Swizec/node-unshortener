@@ -100,5 +100,20 @@ module.exports = {
 	beforeExit(function () {
 	    assert.equal(fired, true);
 	});
+    },
+
+    'expand_budurl.com': function (beforeExit) {
+        var fired = false;
+
+        unshort.budurl(urllib.parse('http://budurl.com/6a8k'),
+                       function (url) {
+                           fired = true;
+                           assert.equal(url.href,
+                                        'http://www.charlestonparksconservancy.org/blogs/view_article/packing_a_picnic/?utm_source=twitter&utm_medium=twitter&utm_campaign=packingapicnic');
+                       });
+
+        beforeExit(function () {
+            assert.equal(fired, true);
+        });
     }
 }
