@@ -142,8 +142,29 @@ module.exports = {
                                         'http://www.wishbookweb.com/1940_Sears_ChristmasBook/images/1940SearsChristmasBookPage0037.jpg');
                        });
 
-        beforeExit(function () {
-            assert.equal(fired, true);
-        });
+
+        var urls = {'http://snipurl.com/27x8i0': 'http://www.wishbookweb.com/1940_Sears_ChristmasBook/images/1940SearsChristmasBookPage0037.jpg',
+                   'http://snurl.com/1esgm9': 'http://granburywx.net/',
+                   'http://cl.lk/8jqkq': 'http://www.nytimes.com/2011/06/11/opinion/11brenner.html?_r=1',
+                   'http://snipr.com/39gmp': 'http://www.amazon.com/dp/0439545277/ref=nosim/?tag=kidderlit-20',
+                   'http://sn.im/financefam': 'http://fiscalfamily.com/'};
+
+        var a_case = function (fixture) {
+            var fired = false;
+
+            unshort.snipurl(urllib.parse(fixture),
+                            function (url) {
+			        assert.equal(url.href, urls[fixture]);
+			        fired = true;
+		            });
+
+	    beforeExit(function () {
+	        assert.equal(fired, true);
+	    });
+        };
+
+        for (var fixture in urls) {
+            a_case(fixture);
+        };
     }
 }

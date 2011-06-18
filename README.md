@@ -71,6 +71,10 @@ Services/domains directly supported so far:
   - budurl.com
   - cli.gs
   - snipurl.com
+  - snurl.com
+  - cl.lk
+  - snipr.com
+  - sn.im
 
 ## License
 
