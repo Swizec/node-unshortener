@@ -1,5 +1,5 @@
 
-# node-unshortener 0.0.7
+# node-unshortener 0.0.8
 
 A simple library that can unshorten any short url.
 
@@ -75,6 +75,11 @@ Services/domains directly supported so far:
   - cl.lk
   - snipr.com
   - sn.im
+  - dai.ly
+  - imgry.net
+  - mln.im
+  - theatln.tc
+  - rww.to
 
 ## License
 

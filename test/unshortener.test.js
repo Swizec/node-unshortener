@@ -82,5 +82,20 @@ module.exports = {
 	beforeExit(function () {
 	    assert.equal(fired, true);
 	});
+    },
+
+    'long_url': function (beforeExit) {
+	var fired = false;
+
+        unshortener.expand('http://news.ycombinator.com/item?id=2615987',
+		           function (url) {
+			       assert.equal(url.href,
+				            'http://news.ycombinator.com/item?id=2615987');
+			       fired = true;
+		           });
+
+	beforeExit(function () {
+	    assert.equal(fired, true);
+	});
     }
 };
