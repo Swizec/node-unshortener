@@ -67,6 +67,14 @@ Services/domains directly supported so far:
   - jc.is
   - nyti.ms
   - linkd.in
+  - win.gs
+  - budurl.com
+  - cli.gs
+  - snipurl.com
+  - snurl.com
+  - cl.lk
+  - snipr.com
+  - sn.im
 
 ## License
 

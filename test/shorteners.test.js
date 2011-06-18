@@ -29,7 +29,8 @@ module.exports = {
         var urls = {'http://jc.is/mvVPJ2': 'http://news.ycombinator.com/item?id=2595226',
                     'http://ericri.es/kcfliN': 'http://su.pr/2uatZH',
                     'http://nyti.ms/k2SK7V': 'http://www.nytimes.com/2011/05/29/realestate/scenes-from-a-wild-youth-streetscapescentral-park.html?smid=tw-nytimes&seid=auto',
-                    'http://linkd.in/k2XhE3': 'http://www.linkedin.com/pub/kristofer-marcus-pmp-csm/3/b4/32a'};
+                    'http://linkd.in/k2XhE3': 'http://www.linkedin.com/pub/kristofer-marcus-pmp-csm/3/b4/32a',
+                   'http://win.gs/mgJknF': 'http://www.youtube.com/watch?v=CHLtVhTaZjA'};
 
         var a_case = function (fixture) {
             var fired = false;
@@ -99,5 +100,71 @@ module.exports = {
 	beforeExit(function () {
 	    assert.equal(fired, true);
 	});
+    },
+
+    'expand_budurl.com': function (beforeExit) {
+        var fired = false;
+
+        unshort.budurl(urllib.parse('http://budurl.com/6a8k'),
+                       function (url) {
+                           fired = true;
+                           assert.equal(url.href,
+                                        'http://www.charlestonparksconservancy.org/blogs/view_article/packing_a_picnic/?utm_source=twitter&utm_medium=twitter&utm_campaign=packingapicnic');
+                       });
+
+        beforeExit(function () {
+            assert.equal(fired, true);
+        });
+    },
+
+    'expand_cli.gs': function (beforeExit) {
+        var fired = false;
+
+        unshort.cligs(urllib.parse('http://cli.gs/gIBpf'),
+                       function (url) {
+                           fired = true;
+                           assert.equal(url.href,
+                                        'http://twitter.com/ryanlavia/statuses/82073752527044608');
+                       });
+
+        beforeExit(function () {
+            assert.equal(fired, true);
+        });
+    },
+
+    'expand_snipurl.com': function (beforeExit) {
+        var fired = false;
+
+        unshort.snipurl(urllib.parse('http://snipurl.com/27x8i0'),
+                       function (url) {
+                           fired = true;
+                           assert.equal(url.href,
+                                        'http://www.wishbookweb.com/1940_Sears_ChristmasBook/images/1940SearsChristmasBookPage0037.jpg');
+                       });
+
+
+        var urls = {'http://snipurl.com/27x8i0': 'http://www.wishbookweb.com/1940_Sears_ChristmasBook/images/1940SearsChristmasBookPage0037.jpg',
+                   'http://snurl.com/1esgm9': 'http://granburywx.net/',
+                   'http://cl.lk/8jqkq': 'http://www.nytimes.com/2011/06/11/opinion/11brenner.html?_r=1',
+                   'http://snipr.com/39gmp': 'http://www.amazon.com/dp/0439545277/ref=nosim/?tag=kidderlit-20',
+                   'http://sn.im/financefam': 'http://fiscalfamily.com/'};
+
+        var a_case = function (fixture) {
+            var fired = false;
+
+            unshort.snipurl(urllib.parse(fixture),
+                            function (url) {
+			        assert.equal(url.href, urls[fixture]);
+			        fired = true;
+		            });
+
+	    beforeExit(function () {
+	        assert.equal(fired, true);
+	    });
+        };
+
+        for (var fixture in urls) {
+            a_case(fixture);
+        };
     }
 }
