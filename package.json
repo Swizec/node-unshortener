@@ -22,7 +22,7 @@
     "test": "expresso"
   },
   "dependencies": {
-    "bitly": "1.0.1"
+    "bitly": "1.1.2"
   },
   "bundleDependencies": [
     "bitly"
