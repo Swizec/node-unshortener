@@ -1,13 +1,17 @@
 {
   "name": "unshortener",
-  "description": "A simple url unshortener for expanding short links.",
+  "description": "A simple library that can unshorten any short url",
   "version": "0.0.9",
   "homepage": "https://github.com/Swizec/node-unshortener",
   "repository": {
     "type": "git",
     "url": "git://github.com/Swizec/node-unshortener.git"
   },
-  "author": "Swizec <swizec@swizec.com> (http://swizec.com)",
+  "author": {
+    "name": "Swizec",
+    "email": "swizec@swizec.com",
+    "url": "http://swizec.com"
+  },
   "main": "./index.js",
   "directories": {
     "lib": "."
@@ -22,10 +26,22 @@
     "test": "expresso"
   },
   "dependencies": {
-    "bitly": "1.1.2"
+    "bitly": "1.1.2",
+    "memcached": "0.0.10",
+    "request": "2.9.202",
+    "MD5": "1.0.0",
+    "charenc": ">=0.0.1",
+    "crypt": ">=0.0.1"
+
   },
   "bundleDependencies": [
-    "bitly"
+    "bitly",
+    "memcached",
+    "request",
+    "MD5"
   ],
-  "devDependencies": {}
+  "devDependencies": {},
+  "readme": "\n# node-unshortener 0.0.9\n\nA simple library that can unshorten any short url.\n\n## Install\n\n     npm install unshortener\n\nor\n\n     git clone https://github.com/Swizec/node-unshortener.git\n     cd node-unshortener\n     npm link\n\n## Usage\n\n``` javascript\n     // expand an URL\n     var unshortener = require('unshortener');\n\n     // you can pass in a url object or string\n     unshortener.expand('http://t.co/rWP6BP3',\n                        function (url) {\n                             // url is a url object\n                             console.log(url);\n                        });\n```\n\nIf you have a handy bitly account you should also pass in an options\nobject to enable the unshortener to use the bitly API directly:\n\n``` javascript\n     // expand an URL\n     var unshortener = require('unshortener');\n\n     // you can pass in a url object or string\n     unshortener.expand('http://t.co/rWP6BP3',\n                        {bitly: {username: '<YOUR BITLY USERNAME>',\n                                 apikey: '<YOUR BITLY API KEY>'}},\n                        function (url) {\n                             // url is a url object\n                             console.log(url);\n                        });\n```\n\nWhen an error occurs the callback is passed the original url and an\nerror flag.\n\n## How it works\n\nnode-unshortener aims to be able to unshorten any link possible, so it\ntries to behave as a browser and simply follows all the\nredirects. However, to be nice, when at all possible, it tries to use\nthe url shortener's official API.\n\nThat said, please feel free to suggest any unshortening services I may\nhave missed.\n\nServices/domains directly supported so far:\n\n  - bit.ly\n  - j.mp\n  - is.gd\n  - goo.gl\n  - ericri.es\n  - jc.is\n  - nyti.ms\n  - linkd.in\n  - win.gs\n  - budurl.com\n  - cli.gs\n  - snipurl.com\n  - snurl.com\n  - cl.lk\n  - snipr.com\n  - sn.im\n  - dai.ly\n  - imgry.net\n  - mln.im\n  - theatln.tc\n  - rww.to\n\n## License\n\nCopyright (C) Swizec Teller <swizec@swizec.com>\n\nLicensed under the [GPL version 3](http://www.gnu.org/licenses) or\nlater for non-commercial use.\n\nFor commercial use please consider [purchasing a commercial\nlicense](http://www.binpress.com/app/nodeunshortener/414?ad=1031) to\nsupport my work.\n",
+  "_id": "unshortener@0.0.9",
+  "_from": "unshortener"
 }
