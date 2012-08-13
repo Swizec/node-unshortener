@@ -26,7 +26,6 @@
     "test": "expresso"
   },
   "dependencies": {
-    "bitly": ">=1.1.2",
     "memcached": "0.0.10",
     "request": "2.9.202",
     "MD5": "1.0.0",
