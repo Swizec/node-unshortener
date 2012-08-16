@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "memcached": "0.0.10",
-    "request": "2.9.202",
+    "request": ">=2.9.202",
     "node_hash": ">=0.2.0",
     "charenc": ">=0.0.1",
     "crypt": ">=0.0.1"
