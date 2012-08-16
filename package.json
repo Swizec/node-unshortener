@@ -1,7 +1,7 @@
 {
   "name": "unshortener",
   "description": "A simple library that can unshorten any short url",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "homepage": "https://github.com/Swizec/node-unshortener",
   "repository": {
     "type": "git",
@@ -17,7 +17,7 @@
     "lib": "."
   },
   "engines": {
-    "node": "0.4 || 0.5 || 0.6"
+    "node": "0.4 || 0.5 || 0.6 || 0.8"
   },
   "files": [
     ""
