@@ -121,8 +121,8 @@ module.exports = {
             assert.equal(fired, true);
         });
     },
-
-    'expand_cli.gs': function (beforeExit) {
+    // cligs API no longer works and it doesn't look easily translatable anymore
+    /*'expand_cli.gs': function (beforeExit) {
         var fired = false;
 
         unshort.cligs(urllib.parse('http://cli.gs/gIBpf'),
@@ -135,7 +135,7 @@ module.exports = {
         beforeExit(function () {
             assert.equal(fired, true);
         });
-    },
+    },*/
 
     'expand_snipurl.com': function (beforeExit) {
         var fired = false;
