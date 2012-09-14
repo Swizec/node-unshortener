@@ -1,5 +1,5 @@
 
-# node-unshortener 0.0.9
+# node-unshortener 0.1.0
 
 A simple library that can unshorten any short url.
 
@@ -21,7 +21,7 @@ or
 
      // you can pass in a url object or string
      unshortener.expand('http://t.co/rWP6BP3',
-                        function (url) {
+                        function (err, url) {
                              // url is a url object
                              console.log(url);
                         });
@@ -38,7 +38,7 @@ object to enable the unshortener to use the bitly API directly:
      unshortener.expand('http://t.co/rWP6BP3',
                         {bitly: {username: '<YOUR BITLY USERNAME>',
                                  apikey: '<YOUR BITLY API KEY>'}},
-                        function (url) {
+                        function (err, url) {
                              // url is a url object
                              console.log(url);
                         });
@@ -69,7 +69,6 @@ Services/domains directly supported so far:
   - linkd.in
   - win.gs
   - budurl.com
-  - cli.gs
   - snipurl.com
   - snurl.com
   - cl.lk
@@ -87,7 +86,3 @@ Copyright (C) Swizec Teller <swizec@swizec.com>
 
 Licensed under the [GPL version 3](http://www.gnu.org/licenses) or
 later for non-commercial use.
-
-For commercial use please consider [purchasing a commercial
-license](http://www.binpress.com/app/nodeunshortener/414?ad=1031) to
-support my work.
