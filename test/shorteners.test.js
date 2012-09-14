@@ -14,7 +14,7 @@ module.exports = {
                       // these exist for the sole purpose of testing node-unshortener
                       {'username': 'nodeunshortener',
                        'apikey': 'R_aafa12fe5f14836d39b016b04e0e3cd1'},
-		      function (url) {
+		      function (err, url) {
 			  assert.equal(url.href,
 				       'http://www.crunchgear.com/2011/05/18/review-two-speck-ipad-2-cases/?utm_source=twitterfeed&utm_medium=twitter');
 			  fired = true;
@@ -44,7 +44,7 @@ module.exports = {
                           // these exist for the sole purpose of testing node-unshortener
                           {'username': 'nodeunshortener',
                            'apikey': 'R_aafa12fe5f14836d39b016b04e0e3cd1'},
-		          function (url) {
+		          function (err, url) {
 			      assert.equal(url.href, urls[fixture]);
 			      fired = true;
 		          });
@@ -66,7 +66,7 @@ module.exports = {
 	unshort.bitly(urllib.parse('http://j.mp/m77DEe'),
                       {'username': 'nodeunshortener',
                        'apikey': 'R_aafa12fe5f14836d39b016b04e0e3cd1'},
-		      function (url) {
+		      function (err, url) {
 			  assert.equal(url.href,
 				       'https://dev.twitter.com/pages/application-permission-model');
 			  fired = true;
@@ -81,7 +81,7 @@ module.exports = {
         var fired = false;
 
 	unshort.isgd(urllib.parse('http://is.gd/JkYqPa'),
-		     function (url) {
+		     function (err, url) {
 			 assert.equal(url.href,
 				      'http://holykaw.alltop.com/the-inception-chair?tu3=1');
 			 fired = true;
@@ -96,7 +96,7 @@ module.exports = {
         var fired = false;
 
 	unshort.googl(urllib.parse('http://goo.gl/fbsS'),
-		      function (url) {
+		      function (err, url) {
 			  assert.equal(url.href,
 				       'http://www.google.com/');
 			  fired = true;
@@ -111,7 +111,7 @@ module.exports = {
         var fired = false;
 
         unshort.budurl(urllib.parse('http://budurl.com/6a8k'),
-                       function (url) {
+                       function (err, url) {
                            fired = true;
                            assert.equal(url.href,
                                         'http://www.charlestonparksconservancy.org/blogs/view_article/packing_a_picnic/?utm_source=twitter&utm_medium=twitter&utm_campaign=packingapicnic');
@@ -126,7 +126,7 @@ module.exports = {
         var fired = false;
 
         unshort.cligs(urllib.parse('http://cli.gs/gIBpf'),
-                       function (url) {
+                       function (err, url) {
                            fired = true;
                            assert.equal(url.href,
                                         'http://twitter.com/ryanlavia/statuses/82073752527044608');
@@ -141,7 +141,7 @@ module.exports = {
         var fired = false;
 
         unshort.snipurl(urllib.parse('http://snipurl.com/27x8i0'),
-                       function (url) {
+                       function (err, url) {
                            fired = true;
                            assert.equal(url.href,
                                         'http://www.wishbookweb.com/1940_Sears_ChristmasBook/images/1940SearsChristmasBookPage0037.jpg');
@@ -158,7 +158,7 @@ module.exports = {
             var fired = false;
 
             unshort.snipurl(urllib.parse(fixture),
-                            function (url) {
+                            function (err, url) {
 			        assert.equal(url.href, urls[fixture]);
 			        fired = true;
 		            });

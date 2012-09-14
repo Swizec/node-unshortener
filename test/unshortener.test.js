@@ -10,7 +10,7 @@ module.exports = {
     'expand_string': function (beforeExit) {
 	var fired = false;
 
-        unshortener.expand('http://is.gd/E27w2x', function (url) {
+        unshortener.expand('http://is.gd/E27w2x', function (err, url) {
             assert.equal(url.href,
 			 'http://holykaw.alltop.com/why-sleep-may-be-the-best-tool-for-tough-deci?tu3=1');
 	    fired = true;
@@ -25,7 +25,7 @@ module.exports = {
         var fired = false;
 
         unshortener.expand(urllib.parse('http://fb.me/w9ajW3sD'),
-                           function (url) {
+                           function (err, url) {
                                assert.equal(url.href,
 					    'http://www.njuz.net/stavljanje-smajlija-ponistava-sve-napisane-uvrede/');
 			       fired = true;
@@ -43,7 +43,7 @@ module.exports = {
                            // these exist for the sole purpose of testing node-unshortener
                           {bitly:{'username': 'nodeunshortener',
                                   'apikey': 'R_aafa12fe5f14836d39b016b04e0e3cd1'}},
-		           function (url) {
+		           function (err, url) {
 			       assert.equal(url.href,
 				            'http://www.crunchgear.com/2011/05/18/review-two-speck-ipad-2-cases/?utm_source=twitterfeed&utm_medium=twitter');
 			       fired = true;
@@ -58,9 +58,9 @@ module.exports = {
         var fired = false;
 
         unshortener.expand('http://bit.ly/lyQusq',
-		           function (url) {
+		           function (err, url) {
 			       assert.equal(url.href,
-				            'http://www.crunchgear.com/2011/05/18/review-two-speck-ipad-2-cases/?utm_source=twitterfeed&utm_medium=twitter');
+				            'http://techcrunch.com/2011/05/18/review-two-speck-ipad-2-cases/?utm_source=twitterfeed&utm_medium=twitter');
 			       fired = true;
 		           });
 
@@ -73,7 +73,7 @@ module.exports = {
         var fired = false;
 
         unshortener.expand('https://youtu.be/UthUv3Njy08',
-		           function (url) {
+		           function (err, url) {
 			       assert.equal(url.href,
 				            'http://www.youtube.com/watch?v=UthUv3Njy08&feature=youtu.be');
 			       fired = true;
@@ -88,7 +88,7 @@ module.exports = {
 	var fired = false;
 
         unshortener.expand('http://news.ycombinator.com/item?id=2615987',
-		           function (url) {
+		           function (err, url) {
 			       assert.equal(url.href,
 				            'http://news.ycombinator.com/item?id=2615987');
 			       fired = true;

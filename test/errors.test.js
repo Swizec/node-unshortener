@@ -11,7 +11,7 @@ module.exports = {
         var fixture = 'http://this.shouldnt.resolve.at.all/234dfa3';
 
         unshortener.expand(fixture,
-                           function (url, error) {
+                           function (error, url) {
                                assert.equal(url.href, fixture);
                                assert.ok(error);
 	                       fired = true;
@@ -27,7 +27,7 @@ module.exports = {
         var fixture = 'http://linkd.in/k2XhE3sfaawfaw3f';
 
         unshortener.expand(fixture,
-                           function (url, error) {
+                           function (error, url) {
                                assert.equal(url.href, fixture);
                                assert.ok(error);
 	                       fired = true;
@@ -45,7 +45,7 @@ module.exports = {
                       // these exist for the sole purpose of testing node-unshortener
                       {'username': 'nodeunshortener',
                        'apikey': 'R_aafa12fe5f14836d39b016b04e0e3cd1'},
-		      function (url) {
+		      function (error, url) {
 			  assert.equal(url.href,
 				       'http://bit.ly/k2XhE3sfaawfaw3f');
 			  fired = true;
