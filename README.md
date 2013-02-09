@@ -1,4 +1,3 @@
-
 # node-unshortener 0.1.0
 
 A simple library that can unshorten any short url.
@@ -82,7 +81,4 @@ Services/domains directly supported so far:
 
 ## License
 
-Copyright (C) Swizec Teller <swizec@swizec.com>
-
-Licensed under the [GPL version 3](http://www.gnu.org/licenses) or
-later for non-commercial use.
+MIT
