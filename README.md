@@ -43,8 +43,21 @@ object to enable the unshortener to use the bitly API directly:
                         });
 ```
 
-When an error occurs the callback is passed the original url and an
-error flag.
+### Errors
+
+When an error occurs, the callback is passed an Error object (with
+`statusCode` if an HTTP error, and/or `code` if there was an internal
+error) along with the URL which resulted in the error. Note that this
+may not be the original url passed into the unshortener. For example,
+if you pass in a URL that returns a 301 redirect to a new URL, and that
+new URL results in a 500 error, that new URL will be passed to the
+callback along with the error.
+
+This behavior is helpful because sometimes the unshortener receives an
+error on an otherwise successfully-unshortened URL, for example if the
+server responds to HEAD requests with 404s, or doesn't like the chosen
+user agent, or otherwise attempts to trip up crawlers. It is up to the
+client to decide how to interpret these errors.
 
 ### Options
 
