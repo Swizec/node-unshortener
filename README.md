@@ -46,6 +46,17 @@ object to enable the unshortener to use the bitly API directly:
 When an error occurs the callback is passed the original url and an
 error flag.
 
+### Options
+
+The second parameter may be an `options` object. The options are:
+
+  - `bitly` - object containing bitly `username` and `apikey`.
+  - `googl` - api key for googleapis unshortener.
+  - `userAgent` - custom user agent to use. The default is
+  `AppleWebKit/525.13 (KHTML, like Gecko) Safari/525.13.`. No user
+  agent header is sent to `t.co` shortened links.
+  - `proxy` - proxy to be passed on to `request` module defaults.
+
 ## How it works
 
 node-unshortener aims to be able to unshorten any link possible, so it
