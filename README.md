@@ -50,12 +50,17 @@ error flag.
 
 The second parameter may be an `options` object. The options are:
 
-  - `bitly` - object containing bitly `username` and `apikey`.
-  - `googl` - api key for googleapis unshortener.
-  - `userAgent` - custom user agent to use. The default is
+  - `bitly` - Object containing bitly `username` and `apikey`.
+  - `googl` - API key for googleapis unshortener.
+  - `userAgent` - Custom user agent to use. The default is
   `AppleWebKit/525.13 (KHTML, like Gecko) Safari/525.13.`. No user
   agent header is sent to `t.co` shortened links.
-  - `proxy` - proxy to be passed on to `request` module defaults.
+  - `proxy` - Proxy to be passed on to `request` module defaults.
+  - `recurseAfterAPICall` - When set to true, after requesting an
+  unshortened URL via any applicable API (bitly, etc.), the unshortener
+  will use its generic unshortening method on the received URL to check
+  for any further redirects or errors. This handles the edge-case where
+  a shortened URL unfurls to another shortened URL. Defaults to false.
 
 ## How it works
 
